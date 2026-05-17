@@ -21,12 +21,9 @@ BaselineOfCarp >> baseline: spec [
 	spec
 		for: #common
 		do: [ spec
-				baseline: 'GToolkit4SmaCC'
-				with: [ spec repository: 'github://feenkcom/gt4smacc:main/src' ].
-			spec
 				baseline: 'GToolkitFormatters'
 				with: [ spec repository: 'github://carpentry-org/gtoolkit-formatters:main/src' ].
-		spec package: 'Carp' with: [ spec requires: #('GToolkit4SmaCC' 'GToolkitFormatters' 'Carp-Parser') ].
-			spec package: 'Carp-AST' with: [ spec requires: #('GToolkit4SmaCC') ].
-			spec package: 'Carp-Parser' with: [ spec requires: #('GToolkit4SmaCC' 'Carp-AST') ] ]
+		spec package: 'Carp' with: [ spec requires: #('GToolkitFormatters' 'Carp-Parser') ].
+			spec package: 'Carp-AST' with: [ spec requires: #() ].
+			spec package: 'Carp-Parser' with: [ spec requires: #( 'Carp-AST') ] ]
 ]
